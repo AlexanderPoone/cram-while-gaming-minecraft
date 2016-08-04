@@ -1,0 +1,107 @@
+achievement.thirst_quencher=Thirst Quencher
+achievement.thirst_quencher.desc=Craft a canteen out of leather
+achievement.thirst_ender=Thirst Ender
+achievement.thirst_ender.desc=Make a bottle of refreshing fruit juice
+achievement.campfire_song=Campfire Song
+achievement.campfire_song.desc=Light a campfire made out of logs and cobblestone!
+achievement.into_ice=Into Ice
+achievement.into_ice.desc=Relieve a Freeze of its rod
+achievement.hot_or_cold=Hot or Cold
+achievement.hot_or_cold.desc=Make a thermometer out of diamonds and Nether quartz
+achievement.that_time_of_year=That Time of Year
+achievement.that_time_of_year.desc=Craft a season clock with Nether quartz and redstone
+achievement.year_one=Year One
+achievement.year_one.desc=Survive a full year!
+achievement.life_or_death=De vie ou de mort
+achievement.life_or_death.desc=Search Nether Fortresses for loot to increase your health!
+
+commands.toughasnails.usage=/toughasnails <tempinfo|settemp|setseason> [args]
+commands.toughasnails.settemp.success=Set player temperature to %s
+commands.toughasnails.settemp.disabled=Body Temperature is currently disabled!
+commands.toughasnails.setseason.success=Set season to %s
+commands.toughasnails.setseason.fail=Invalid season %s
+commands.toughasnails.setseason.disabled=Seasons are currently disabled!
+
+config.category.survivalSettings.title=Survival Settings
+
+itemGroup.tabToughAsNails=Dur comme fer
+
+tile.campfire.name=Feu de camp
+tile.dead_crops.name=Culture morte
+tile.rain_collector.name=Collecteur d'eau de pluie
+tile.temperature_coil.cooling_coil.name=Radiateur de refroidissement
+tile.temperature_coil.heating_coil.name=Radiateur de chauffage
+tile.season_sensor_spring.name=Capteur de saisons
+tile.season_sensor_summer.name=Capteur de saisons
+tile.season_sensor_autumn.name=Capteur de saisons
+tile.season_sensor_winter.name=Capteur de saisons
+
+item.air_filter.name=Filtre à air
+item.bottle_of_blackdamp.name=Bottle of Blackdamp
+item.bottle_of_whitedamp.name=Bottle of Whitedamp
+item.bottle_of_firedamp.name=Bottle of Firedamp
+item.bottle_of_stinkdamp.name=Bottle of Stinkdamp
+item.clean_water_canteen.name=Fiole d'eau pure
+item.charcoal_filter.name=Charcoal Filter
+item.dirty_water_canteen.name=Gourde d'eau impure
+item.dirty_water_bottle.name=Fiole d'eau impure
+item.empty_canteen.name=Gourde vide
+item.filtered_water_canteen.name=Gourde d'eau filtrée
+item.filtered_water_bottle.name=Fiole d'eau filtrée
+item.freeze_powder.name=Poudre de gel
+item.freeze_rod.name=Bâton de gel
+item.ice_charge.name=Boule de glace
+item.ice_cube.name=Glaçon
+item.jelled_slime.name=Jelled Slime
+item.jelled_slime_helmet.name=Jelled Slime Helmet
+item.jelled_slime_chestplate.name=Jelled Slime Chestplate
+item.jelled_slime_leggings.name=Jelled Slime Leggings
+item.jelled_slime_boots.name=Jelled Slime Boots
+item.juice_apple.name=Jus de pomme
+item.juice_beetroot.name=Jus de betterave
+item.juice_cactus.name=Jus de cactus
+item.juice_carrot.name=Jus de carotte
+item.juice_chorus_fruit.name=Jus de chorus
+item.juice_glistering_melon.name=Jus de pastèque scintillante
+item.juice_golden_apple.name=Jus de pomme dorée
+item.juice_golden_carrot.name=Jus de carotte dorée
+item.juice_melon.name=Jus de pastèque
+item.juice_pumpkin.name=Jus de citrouille
+item.lifeblood_crystal.name=Lifeblood Crystal
+item.respirator.name=Masque de protection
+item.season_clock.name=Montre sur saisons
+item.spawn_egg_freeze.name=Ouef de gel
+item.tan_icon.name=TAN Icon
+item.thermometer.name=Thermomètre
+item.wool_helmet.name=Capuche en laine
+item.wool_chestplate.name=Veste en laine
+item.wool_leggings.name=Pantalon en laine
+item.wool_boots.name=Bottes en laine
+
+potion.hypothermia=Hypothermie
+potion.hyperthermia=Hyperthermie
+potion.thirst=Soif
+potion.cold_resistance=Résistance au froid
+potion.heat_resistance=Résistance à la chaleur
+
+potion.effect.cold_resistance_type=Potion de résistance au froid
+potion.effect.long_cold_resistance_type=Potion de résistance au froid
+potion.effect.heat_resistance_type=Potion de résistance à la chaleur
+potion.effect.long_heat_resistance_type=Potion de résistance à la chaleur
+
+splash_potion.effect.cold_resistance_type=Potion de résistance au froid jetable
+splash_potion.effect.long_cold_resistance_type=Potion de résistance au froid jetable
+splash_potion.effect.heat_resistance_type=Potion de résistance à la chaleur jetable
+splash_potion.effect.long_heat_resistance_type=Potion de résistance à la chaleur jetable
+
+lingering_potion.effect.cold_resistance_type=Potion de résistance au froid persistante
+lingering_potion.effect.long_cold_resistance_type=Potion de résistance au froid persistante
+lingering_potion.effect.heat_resistance_type=Potion de résistance à la chaleur persistante
+lingering_potion.effect.long_heat_resistance_type=Potion de résistance à la chaleur persistante
+
+tipped_arrow.effect.cold_resistance_type=Flèche de résistance au froid
+tipped_arrow.effect.long_cold_resistance_type=Flèche de résistance au froid
+tipped_arrow.effect.heat_resistance_type=Flèche de résistance à la chaleur
+tipped_arrow.effect.long_heat_resistance_type=Flèche de résistance à la chaleur
+
+entity.ToughAsNails.freeze.name=Gel
