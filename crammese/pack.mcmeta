@@ -1,0 +1,13 @@
+{
+    "pack":{
+      "pack_format":2,
+      "description":"Hebon-shiki Rōmaji translation"
+    },
+    "language":{
+       "ja_RJ":{
+          "name":"Nihongo",
+          "region":"Rōmaji",
+          "bidirectional":false
+       }
+    }
+}
