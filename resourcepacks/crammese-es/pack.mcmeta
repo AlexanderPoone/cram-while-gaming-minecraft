@@ -1,0 +1,13 @@
+{
+    "pack":{
+      "pack_format": 7,
+      "description":"Crammese (España)"
+    },
+    "language":{
+       "cm_fr":{
+          "name":"Crammese",
+          "region":"España",
+          "bidirectional":false
+       }
+    }
+}
