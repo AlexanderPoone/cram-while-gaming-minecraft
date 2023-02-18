@@ -1,0 +1,23 @@
+{
+    "pack":{
+      "pack_format": 7,
+      "description":"Crammese"
+    },
+    "language":{
+       "cm_es":{
+          "name":"Crammese",
+          "region":"España",
+          "bidirectional":false
+       },
+       "cm_fr":{
+          "name":"Crammese",
+          "region":"France",
+          "bidirectional":false
+       },
+       "cm_ja":{
+          "name":"Crammese",
+          "region":"日本",
+          "bidirectional":false
+       }
+    }
+}

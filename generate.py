@@ -16,14 +16,17 @@ for k in trans:
 	if k in out:
 		out[k] = trans[k] + ' / ' + out[k]
 
-for mod in ('comforts', 'biomesoplenty',):
-	mod_trans = loads(ZipFile(glob(expanduser(f'~/AppData/Roaming/.minecraft/mods/{mod}*.jar'))[0]).open(f'assets/{mod}/lang/{lang}.json').read().decode('utf-8'))
-	mod_en = loads(ZipFile(glob(expanduser(f'~/AppData/Roaming/.minecraft/mods/{mod}*.jar'))[0]).open(f'assets/{mod}/lang/en_us.json').read().decode('utf-8'))
+for mod in ('comforts', 'biomesoplenty','cfm','jei'):
+	try:
+		mod_trans = loads(ZipFile(glob(expanduser(f'~/AppData/Roaming/.minecraft/mods/{mod}*.jar'))[0]).open(f'assets/{mod}/lang/{lang}.json').read().decode('utf-8'))
+		mod_en = loads(ZipFile(glob(expanduser(f'~/AppData/Roaming/.minecraft/mods/{mod}*.jar'))[0]).open(f'assets/{mod}/lang/en_us.json').read().decode('utf-8'))
 
-	for k in mod_trans:
-		if k in mod_en:
-			mod_en[k] = mod_trans[k] + ' / ' + mod_en[k]
-	for k in mod_en:
-		out[k] = mod_en[k]
+		for k in mod_trans:
+			if k in mod_en:
+				mod_en[k] = mod_trans[k] + ' / ' + mod_en[k]
+		for k in mod_en:
+			out[k] = mod_en[k]
+	except:
+		pass
 
 open(f'cm_{lang[:2]}.json', 'w', encoding='utf-8').write(dumps(out, indent=2))
