@@ -3,7 +3,7 @@ from os.path import expanduser
 from glob import glob
 from zipfile import ZipFile
 
-lang = 'es_es'
+lang = 'ja_jp'
 
 hash = loads(open(expanduser('~/AppData/Roaming/.minecraft/assets/indexes/2.json'), 'r', encoding='utf-8').read())['objects'][f'minecraft/lang/{lang}.json']['hash']
 # hash = loads(open(expanduser('~/AppData/Roaming/.minecraft/assets/indexes/1.19.json'), 'r', encoding='utf-8').read())['objects']['minecraft/lang/en_gb.json']['hash']
