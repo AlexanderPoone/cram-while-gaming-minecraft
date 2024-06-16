@@ -77,6 +77,7 @@ OUT = {
         "Le détenteur du titre",
         "Le qui parle d'une manière affectée",
         "Le qui se mêle de tout",
+        "L'homme des cavernes",
         "Christophe Colomb - colon, capitaine, adventurier",
         "Johnny Hallyday - Le rock",
         "Sarah Bernhardt - La Voi<x> d'or",
