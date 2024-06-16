@@ -1,7 +1,7 @@
 '''
 Copyleft Alexander Poone 2024 Edutainment.
 
-Learn languages by checking out Minecraft villager names. Requires `Villager Names` mod installed.
+Learn languages by checking out Minecraft villager names. Requires the `Villager Names` mod by Serilum: https://www.curseforge.com/minecraft/mc-mods/villager-names
 
 e.g., on Windows, path of replaced file (replace 1.20.6 w/ any version) is:    %USERPROFILE%/curseforge/minecraft/Instances/1.20.6/config/collective
 '''
