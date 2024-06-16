@@ -48,6 +48,7 @@ MOD_LIST = ('advancementframes',
 'snowyspirit',
 'supplementaries',
 'suppsquared',
+'terralith',
 'toughasnails',
 'wthit',
 'xaeros_minimap',)
