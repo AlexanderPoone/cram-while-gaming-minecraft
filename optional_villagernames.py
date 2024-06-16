@@ -94,7 +94,7 @@ OUT = {
         "Les Grandes Espérances",
         "Le Printemps - Grand magasin",
         "Les Galeries Lafayette <H>aussmann - Le boulevard <H>aussmann",
-        "Georges-Eugène <H>aussmann - transformations de Paris sous le Second Empire: espaces verts, mobilier urbain, égouts",
+        "Georges-Eugène <H>aussmann - transformations de Paris sous le 2d(<t) Em>pire: espaces ver<ts>, mobilier urbain, égou<ts>",
         "Surya Bonaly - patineuse artistique",
     ]
 }
