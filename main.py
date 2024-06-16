@@ -1,7 +1,7 @@
 '''
 Copyleft Alexander Poone 2024 Edutainment.
 
-Main script. Outputs resource pack for language learning while gaming.
+Main script. Outputs Minecraft resource pack for language learning while gaming.
 '''
 
 from glob import glob
@@ -13,7 +13,7 @@ from zipfile import ZipFile
 
 CURSEFORGE_INSTALLED = exists(expanduser('~/curseforge/minecraft'))
 VERSION_TO_BE_CHANGED = '1.20.6'
-LEAPFROG = '1.21'						# Leapfrog to the latest translation, e.g., 1.20.6 using 1.21's updated translation.
+LEAPFROG = '1.21'						        # Leapfrog to the latest translation, e.g., 1.20.6 using 1.21's updated translation.
 SUPPORTED_MOD_LIST = ('advancementframes',		# It doesn't matter if some mods are not installed, the script will skip them.
             'betterlily',
             'betterpvp',
