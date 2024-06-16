@@ -76,15 +76,18 @@ OUT = {
 "Jules Verne - Voyage au centre de la Terre",
 "Francis Poulenc - Concert champêtre",
 "Henri Matisse - Papier découpé",
-"Ingres - La Grande Odalisque",
+"Ingre<s> - La Grande Odalisque",
 "Nicolas Poussin - L'Enlèvement des Sabines",
 "Caravage - La nature morte",
 "Léonard de Vinci - L'Homme de Vitruve",
 "Thierry Hermès - La marque de luxe française qui porte son nom",
+"Jean Cocteau - Orphée",
 "Bourvil - La Grande Vadrouille",
 "Les Grandes Espérances",
 "Le Printemps - Grand magasin",
-"Les Galeries Lafayette Haussmann - Le boulevard Haussmann"
+"Les Galeries Lafayette <H>aussmann - Le boulevard <H>aussmann",
+"Georges-Eugène <H>aussmann - transformations de Paris sous le Second Empire: espaces verts, mobilier urbain, égouts",
+"Surya Bonaly - patineuse artistique",
   ]
 }
 
