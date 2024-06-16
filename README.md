@@ -1,5 +1,2 @@
 # unofficial-mc-mods-translations
-This is a personal repo for cramming words in foreign languages while playing Minecraft, hence the term *crammese*. Even though I don't have much time since I'm occupied with work all the time, my life is dreadful and I just have to play Minecraft.
-
-Requirements:
-* Minecraft 1.19.4
+This is a repo for generating side-by-side translations with memory aids for every Minecraft in-game text. This enables cramming words and grammar rules of foreign languages (e.g., multiple variants of French and Spanish, as well as Romaji romanisation of Japanese) while playing Minecraft, hence the term *crammese*. Even though I don't have much time since I'm occupied with work all the time, my life's dreadful and I just have to play Minecraft to lighten my mood. \*sigh\*
