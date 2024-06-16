@@ -103,6 +103,7 @@ OUT = {
         "Jean Cocteau - Orphée",
         "Bourvil - La Grande Vadrouille",
         "Les Grandes Espérances",
+        "Révolution de Juillet - Trois Glorieuses - La Liberté guidant le peuple",
         "Le Printemps - Grand magasin",
         "Les Galeries Lafayette <H>aussmann[Osman] - Le boulevard <H>aussmann",
         "Georges-Eugène <H>aussmann[Osman] - transformations de Paris sous le 2d(<t) Em>pire: espaces ver<ts>, mobilier urbain, égou<ts>",
