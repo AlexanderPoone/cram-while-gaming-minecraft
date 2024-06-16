@@ -3,6 +3,6 @@ This repo generates a Minecraft resource pack, which provides side-by-side trans
 
 Even though I don't have much time since I'm occupied with work all the time, my life's dreadful and I just have to play Minecraft to lighten my mood. *\*sigh\**
 
-'''
+```
 pip3 install -r requirements.txt
-'''
+```
