@@ -18,7 +18,7 @@ from zipfile import ZipFile
 CURSEFORGE_INSTALLED = exists(expanduser('~/curseforge/minecraft'))    # False
 VERSION_TO_BE_CHANGED = '1.20.6'
 LEAPFROG = '1.21'  # leapfrog to latest.
-SUPPORTED_MOD_LIST = ('advancementframes',
+SUPPORTED_MOD_LIST = ('advancementframes',      # It doesn't matter if some mods are not installed, the script will skip them.
             'betterlily',
             'betterpvp',
             'biomesoplenty',
@@ -58,6 +58,7 @@ SUPPORTED_MOD_LIST = ('advancementframes',
             'snowyspirit',
             'supplementaries',
             'suppsquared',
+            'terralith',
             'toughasnails',
             'wthit',
             'xaeros_minimap',)
@@ -70,7 +71,18 @@ else:
     MC_HOME = MC_MODS = expanduser('~/AppData/Roaming/.minecraft')
 
 # TODO: Tkinter
-lang = 'fr_fr'
+# lang = 'fr_fr'
+lang = 'de_de'
+lang_directory = None
+
+if lang[:2] == 'fr':
+    lang_directory = 'French'
+elif lang[:2] == 'es':
+    lang_directory = 'Spanish'
+elif lang[:2] == 'de':
+    lang_directory = 'German'
+else:
+    raise Exception('Language not supported.')
 
 # TODO: find latest file, not hardcoding '5' and '1.20'
 # hash = loads(open(expanduser('~/AppData/Roaming/.minecraft/assets/indexes/1.19.json'), 'r', encoding='utf-8').read())['objects']['minecraft/lang/en_gb.json']['hash']
@@ -81,15 +93,15 @@ print('Hash found: ', hash)
 trans = loads(open(
     f'{MC_HOME}/assets/objects/{hash[:2]}/{hash}', 'r', encoding='utf-8').read())
 
-words = [trans[k].split(' ')[0].lower() for k in trans if k.startswith(
-    'item.minecraft') or k.startswith('block.minecraft') or k.startswith('entity.minecraft')]
+words = [trans[k].split(' ')[0].lower() if lang_directory != 'German' else trans[k].split(' ')[0].split('-')[-1] for k in trans if len(trans[k].split(' ')[0]) > 2 and (k.startswith(
+    'item.minecraft') or k.startswith('block.minecraft') or k.startswith('entity.minecraft'))]
 
 for mod in SUPPORTED_MOD_LIST:
     try:
         mod_trans_json_str = sub('//.*', '', ZipFile(glob(f'{MC_MODS}/mods/{mod}*.jar')[0]).open(f'assets/{mod.replace("-", "").replace("trap", "trp").replace(
             "wthit", "waila").replace("xaeros_", "xaero").replace("betterpvp", "xaerobetterpvp").replace("oculus", "iris")}/lang/{lang}.json').read().decode('utf-8'))
         mod_trans = loads(mod_trans_json_str)
-        new = sorted(set([mod_trans[k].split(' ')[0].lower() for k in mod_trans if len(mod_trans[k].split(
+        new = sorted(set([mod_trans[k].split(' ')[0].lower() if lang_directory != 'German' else trans[k].split(' ')[0].split('-')[-1] for k in mod_trans if len(mod_trans[k].split(
             ' ')[0]) > 2 and (k.startswith('item.') or k.startswith('block.') or k.startswith('entity.'))]))
         print(new)
         words += new
@@ -103,9 +115,7 @@ worddict = {}
 for word in words:
     print(word)
     try:
-        word = word.lower()
-        url = f'https://kaikki.org/dictionary/French/meaning/{
-            word[0]}/{word[:2]}/{word}.json'
+        url = f'https://kaikki.org/dictionary/{lang_directory}/meaning/{word[0]}/{word[:2]}/{word}.json'
         print(url)
         res = get(url)
         tags = loads([x for x in res.text.split('\n') if x.startswith(

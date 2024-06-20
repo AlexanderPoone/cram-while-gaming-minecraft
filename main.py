@@ -67,7 +67,7 @@ else:
     MC_HOME = MC_MODS = expanduser('~/AppData/Roaming/.minecraft')
 
 # TODO: Tkinter GUI
-lang = 'fr_fr'
+lang = 'ja_jp'      # e.g., 'fr_fr', 'fr_be', 'es_es', 'es_ar', 'ja_jp', 'de_de'
 
 # TODO: find latest file, not hardcoding '5' and '1.20'
 # hash = loads(open(expanduser('~/AppData/Roaming/.minecraft/assets/indexes/1.19.json'), 'r', encoding='utf-8').read())['objects']['minecraft/lang/en_gb.json']['hash']
@@ -82,8 +82,9 @@ out = loads(ZipFile(f'{MC_HOME}/versions/{LEAPFROG}/{LEAPFROG}.jar').open(
 
 # print(set([trans[k].split(' ')[0].lower() for k in trans if k.startswith('item.minecraft') or k.startswith('block.minecraft')]))
 worddict = None
-with open(f'mc_{lang}.pickle', 'rb') as f:
-    worddict = load(f)
+if exists(f'mc_{lang}.pickle'):
+    with open(f'mc_{lang}.pickle', 'rb') as f:
+        worddict = load(f)
 
 for k in trans:
     if k in out:
@@ -91,17 +92,18 @@ for k in trans:
             out[k] = sub('(?<!C|S|P|c|s|p)h', '<h>', trans[k].replace('iencio', '`iencio').replace('iencia', '`iencia').replace('ienso', '`ienso').replace('iensa', '`iensa').replace('iense', '`iense').replace('iento', '`iento').replace('ienta', '`ienta').replace('iente', '`iente').replace(
                 'iende', '`iende').replace('iando', '`iando').replace('ianda', '`ianda').replace('uevo', '`uevo').replace('ueva', '`ueva').replace('ueve', '`ueve').replace('ier', '`ier').replace('uer', '`uer').replace('v', 'v(b)').replace('H', '<H>').replace('V', 'V(B)')) + ' / ' + out[k].replace('%s', '●')
         elif lang.startswith('fr_'):
-            if k.startswith('item.minecraft') or k.startswith('block.minecraft') or k.startswith('entity.minecraft'):
-                spl = trans[k].split(' ')
-                firstword = spl[0].lower()
-                rest = ' '.join(spl[1:])
-                if firstword in worddict:
-                    if worddict[firstword] == 'm':
-                        trans[k] = f'Un {firstword} {rest}'
-                    if worddict[firstword] == 'f':
-                        trans[k] = f'Une {firstword} {rest}'
-                    if worddict[firstword] == 'p':
-                        trans[k] = f'Des {firstword} {rest}'
+            if worddict is not None:            # if the grammar file for that language exists
+                if k.startswith('item.minecraft') or k.startswith('block.minecraft') or k.startswith('entity.minecraft'):
+                    spl = trans[k].split(' ')
+                    firstword = spl[0].lower()
+                    rest = ' '.join(spl[1:])
+                    if firstword in worddict:
+                        if worddict[firstword] == 'm':
+                            trans[k] = f'Un {firstword} {rest}'
+                        if worddict[firstword] == 'f':
+                            trans[k] = f'Une {firstword} {rest}'
+                        if worddict[firstword] == 'p':
+                            trans[k] = f'Des {firstword} {rest}'
             tmp = sub(r'iz(?=$| )', 'i<z>', sub(r'mp(?=$| )', '<mp>', sub(r'(?<!C|S|P|c|s|p)h', '<h>', sub(
                 r'(?<!C|S|P|c|s|p)H', '<H>', trans[k])))).replace('ufs', '<ufs>')
             foo = finditer(r' qui (se )?[a-zéèç"]+nt(?= |$|\.)', tmp)
@@ -127,27 +129,28 @@ for mod in SUPPORTED_MOD_LIST:
                     mod_en[k] = sub('(?<!C|S|P|c|s|p)h', '<h>', mod_trans[k].replace('iencio', '`iencio').replace('iencia', '`iencia').replace('ienso', '`ienso').replace('iensa', '`iensa').replace('iense', '`iense').replace('iento', '`iento').replace('ienta', '`ienta').replace('iente', '`iente').replace(
                         'iende', '`iende').replace('iando', '`iando').replace('ianda', '`ianda').replace('uevo', '`uevo').replace('ueva', '`ueva').replace('ueve', '`ueve').replace('ier', '`ier').replace('uer', '`uer').replace('v', 'v(b)').replace('H', '<H>').replace('V', 'V(B)')) + ' / ' + mod_en[k].replace('%s', '●')
                 elif lang.startswith('fr_'):
-                    if k.startswith('item.') or k.startswith('block.') or k.startswith('entity.'):
-                        spl = mod_trans[k].split(' ')
-                        firstword = spl[0].lower()
-                        rest = ' '.join(spl[1:])
-                        if firstword in worddict:
-                            if worddict[firstword] == 'm':
-                                mod_trans[k] = f'Un {firstword} {rest}'
-                            if worddict[firstword] == 'f':
-                                mod_trans[k] = f'Une {firstword} {rest}'
-                            if worddict[firstword] == 'p':
-                                mod_trans[k] = f'Des {firstword} {rest}'
+                    if worddict is not None:            # if the grammar file for that language exists
+                        if k.startswith('item.') or k.startswith('block.') or k.startswith('entity.'):
+                            spl = mod_trans[k].split(' ')
+                            firstword = spl[0].lower()
+                            rest = ' '.join(spl[1:])
+                            if firstword in worddict:
+                                if worddict[firstword] == 'm':
+                                    mod_trans[k] = f'Un {firstword} {rest}'
+                                if worddict[firstword] == 'f':
+                                    mod_trans[k] = f'Une {firstword} {rest}'
+                                if worddict[firstword] == 'p':
+                                    mod_trans[k] = f'Des {firstword} {rest}'
 
-                    tmp = sub(r'iz(?=$| )', 'i<z>', sub(r'mp(?=$| )', '<mp>', sub(r'(?<!C|S|P|c|s|p)h', '<h>', sub(r'(?<!C|S|P|c|s|p)H', '<H>', mod_trans[k].replace(
-                        'éé', 'é'))))).replace(' de vérification', ' à damiers').replace('Block ', 'Bloc ').replace('ufs', '<ufs>').replace('Pattes', 'Pâtes')
-                    foo = finditer(r' qui (se )?[a-zéèç"]+nt(?= |$|\.)', tmp)
-                    for bar in foo:
-                        print(bar.group(), sub('nt$', '<nt>', bar.group()))
-                        tmp = tmp.replace(bar.group(), sub(
-                            'nt$', '<nt>', bar.group()))
-                    if mod_en[k] != tmp:
-                        mod_en[k] = tmp + ' / ' + mod_en[k].replace('%s', '●')
+                        tmp = sub(r'iz(?=$| )', 'i<z>', sub(r'mp(?=$| )', '<mp>', sub(r'(?<!C|S|P|c|s|p)h', '<h>', sub(r'(?<!C|S|P|c|s|p)H', '<H>', mod_trans[k].replace(
+                            'éé', 'é'))))).replace(' de vérification', ' à damiers').replace('Block ', 'Bloc ').replace('ufs', '<ufs>').replace('Pattes', 'Pâtes')
+                        foo = finditer(r' qui (se )?[a-zéèç"]+nt(?= |$|\.)', tmp)
+                        for bar in foo:
+                            print(bar.group(), sub('nt$', '<nt>', bar.group()))
+                            tmp = tmp.replace(bar.group(), sub(
+                                'nt$', '<nt>', bar.group()))
+                        if mod_en[k] != tmp:
+                            mod_en[k] = tmp + ' / ' + mod_en[k].replace('%s', '●')
                 else:
                     mod_en[k] = mod_trans[k] + ' / ' + \
                         mod_en[k].replace('%s', '●')
