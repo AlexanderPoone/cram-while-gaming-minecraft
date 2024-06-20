@@ -82,7 +82,7 @@ elif lang[:2] == 'es':
 elif lang[:2] == 'de':
     lang_directory = 'German'
 else:
-    raise Exception('Language not supported.')
+    raise Exception('⛔ Language not supported.')
 
 # TODO: find latest file, not hardcoding '5' and '1.20'
 # hash = loads(open(expanduser('~/AppData/Roaming/.minecraft/assets/indexes/1.19.json'), 'r', encoding='utf-8').read())['objects']['minecraft/lang/en_gb.json']['hash']
@@ -124,7 +124,7 @@ for word in words:
             'm' if 'masculine' in tags else ('f' if 'feminine' in tags else None))
         worddict[word] = out_display
     except:
-        print(word, 'failed')
+        print('🚫', word, 'failed')
 with open(f'mc_{lang}.pickle', 'wb') as f:
     dump(worddict, f)
 print(worddict)
