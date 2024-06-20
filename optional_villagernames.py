@@ -81,7 +81,7 @@ OUT = {
         "Le qui parle d'une manière affectée",
         "Le qui se mêle de tout",
         "Le qui ronfle fort/bruyamment",
-        "Le qui claque des doifts",
+        "Le qui claque des doigts",
         "Le qui se gratte le visage",
         "L'homme des cavernes",
         "Christophe Colomb - colon, capitaine, adventurier",

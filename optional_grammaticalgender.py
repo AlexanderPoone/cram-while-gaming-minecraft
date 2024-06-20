@@ -13,6 +13,7 @@ from pickle import dump, load
 from pprint import pprint
 from re import sub
 from requests import get
+from traceback import format_exc
 from zipfile import ZipFile
 
 CURSEFORGE_INSTALLED = exists(expanduser('~/curseforge/minecraft'))    # False
@@ -100,12 +101,12 @@ for mod in SUPPORTED_MOD_LIST:
         mod_trans_json_str = sub('//.*', '', ZipFile(glob(f'{MC_MODS}/mods/{mod}*.jar')[0]).open(f'assets/{mod.replace("-", "").replace("trap", "trp").replace(
             "wthit", "waila").replace("xaeros_", "xaero").replace("betterpvp", "xaerobetterpvp").replace("oculus", "iris")}/lang/{lang}.json').read().decode('utf-8'))
         mod_trans = loads(mod_trans_json_str)
-        new = sorted(set([mod_trans[k].split(' ')[0].lower() if lang_directory != 'German' else trans[k].split(' ')[0].split('-')[-1] for k in mod_trans if len(mod_trans[k].split(
+        new = sorted(set([mod_trans[k].split(' ')[0].lower() if lang_directory != 'German' else mod_trans[k].split(' ')[0].split('-')[-1] for k in mod_trans if len(mod_trans[k].split(
             ' ')[0]) > 2 and (k.startswith('item.') or k.startswith('block.') or k.startswith('entity.'))]))
         print(new)
         words += new
     except Exception as e:
-        print(e)
+        print(mod, format_exc())
 words = sorted(set(words))
 print(words)
 # words = [w.replace('oe', 'œ') for w in words]
