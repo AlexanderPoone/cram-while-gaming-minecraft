@@ -67,7 +67,7 @@ else:
     MC_HOME = MC_MODS = expanduser('~/AppData/Roaming/.minecraft')
 
 # TODO: Tkinter GUI
-lang = 'ja_jp'      # e.g., 'fr_fr', 'fr_be', 'es_es', 'es_ar', 'ja_jp', 'de_de'
+lang = 'fr_fr'      # e.g., 'fr_fr', 'fr_be', 'es_es', 'es_ar', 'ja_jp', 'de_de'
 
 # TODO: find latest file, not hardcoding '5' and '1.20'
 # hash = loads(open(expanduser('~/AppData/Roaming/.minecraft/assets/indexes/1.19.json'), 'r', encoding='utf-8').read())['objects']['minecraft/lang/en_gb.json']['hash']
@@ -97,13 +97,15 @@ for k in trans:
                     spl = trans[k].split(' ')
                     firstword = spl[0].lower()
                     rest = ' '.join(spl[1:])
+                    if rest != '':
+                        rest = f' {rest}'
                     if firstword in worddict:
                         if worddict[firstword] == 'm':
-                            trans[k] = f'Un {firstword} {rest}'
+                            trans[k] = f'Un {firstword}{rest}'
                         if worddict[firstword] == 'f':
-                            trans[k] = f'Une {firstword} {rest}'
+                            trans[k] = f'Une {firstword}{rest}'
                         if worddict[firstword] == 'p':
-                            trans[k] = f'Des {firstword} {rest}'
+                            trans[k] = f'Des {firstword}{rest}'
             tmp = sub(r'iz(?=$| )', 'i<z>', sub(r'mp(?=$| )', '<mp>', sub(r'(?<!C|S|P|c|s|p)h', '<h>', sub(
                 r'(?<!C|S|P|c|s|p)H', '<H>', trans[k])))).replace('ufs', '<ufs>')
             foo = finditer(r' qui (se )?[a-zéèç"]+nt(?= |$|\.)', tmp)
@@ -112,6 +114,24 @@ for k in trans:
                 tmp = tmp.replace(bar.group(), sub('nt$', '<nt>', bar.group()))
             if out[k] != tmp:
                 out[k] = tmp + ' / ' + out[k].replace('%s', '●')
+        elif lang.startswith('de_'):
+            if worddict is not None:            # if the grammar file for that language exists
+                if k.startswith('item.minecraft') or k.startswith('block.minecraft') or k.startswith('entity.minecraft'):
+                    spl = trans[k].split(' ')
+                    firstword = spl[0]
+                    rest = ' '.join(spl[1:])
+                    if rest != '':
+                        rest = f' {rest}'
+                    if firstword in worddict:
+                        if worddict[firstword] == 'm':
+                            trans[k] = f'Der {firstword}{rest}'
+                        if worddict[firstword] == 'f':
+                            trans[k] = f'Die {firstword}{rest}'
+                        if worddict[firstword] == 'n':
+                            trans[k] = f'Das {firstword}{rest}'
+                        if worddict[firstword] == 'p':
+                            trans[k] = f'(pl.) {firstword}{rest}'
+            out[k] = trans[k] + ' / ' + out[k].replace('%s', '●')
         else:
             out[k] = trans[k] + ' / ' + out[k].replace('%s', '●')
 
@@ -134,13 +154,15 @@ for mod in SUPPORTED_MOD_LIST:
                             spl = mod_trans[k].split(' ')
                             firstword = spl[0].lower()
                             rest = ' '.join(spl[1:])
+                            if rest != '':
+                                rest = f' {rest}'
                             if firstword in worddict:
                                 if worddict[firstword] == 'm':
-                                    mod_trans[k] = f'Un {firstword} {rest}'
+                                    mod_trans[k] = f'Un {firstword}{rest}'
                                 if worddict[firstword] == 'f':
-                                    mod_trans[k] = f'Une {firstword} {rest}'
+                                    mod_trans[k] = f'Une {firstword}{rest}'
                                 if worddict[firstword] == 'p':
-                                    mod_trans[k] = f'Des {firstword} {rest}'
+                                    mod_trans[k] = f'Des {firstword}{rest}'
 
                         tmp = sub(r'iz(?=$| )', 'i<z>', sub(r'mp(?=$| )', '<mp>', sub(r'(?<!C|S|P|c|s|p)h', '<h>', sub(r'(?<!C|S|P|c|s|p)H', '<H>', mod_trans[k].replace(
                             'éé', 'é'))))).replace(' de vérification', ' à damiers').replace('Block ', 'Bloc ').replace('ufs', '<ufs>').replace('Pattes', 'Pâtes')
@@ -151,9 +173,26 @@ for mod in SUPPORTED_MOD_LIST:
                                 'nt$', '<nt>', bar.group()))
                         if mod_en[k] != tmp:
                             mod_en[k] = tmp + ' / ' + mod_en[k].replace('%s', '●')
+                elif lang.startswith('de_'):
+                    if worddict is not None:            # if the grammar file for that language exists
+                        if k.startswith('item.') or k.startswith('block.') or k.startswith('entity.'):
+                            spl = mod_trans[k].split(' ')
+                            firstword = spl[0]
+                            rest = ' '.join(spl[1:])
+                            if rest != '':
+                                rest = f' {rest}'
+                            if firstword in worddict:
+                                if worddict[firstword] == 'm':
+                                    mod_trans[k] = f'Der {firstword}{rest}'
+                                if worddict[firstword] == 'f':
+                                    mod_trans[k] = f'Die {firstword}{rest}'
+                                if worddict[firstword] == 'n':
+                                    mod_trans[k] = f'Das {firstword}{rest}'
+                                if worddict[firstword] == 'p':
+                                    mod_trans[k] = f'(pl.) {firstword}{rest}'
+                    mod_en[k] = mod_trans[k] + ' / ' + mod_en[k].replace('%s', '●')
                 else:
-                    mod_en[k] = mod_trans[k] + ' / ' + \
-                        mod_en[k].replace('%s', '●')
+                    mod_en[k] = mod_trans[k] + ' / ' + mod_en[k].replace('%s', '●')
         for k in mod_en:
             out[k] = mod_en[k]
         print(mod, ' ' * (30-len(mod)), '☑️ Done.')
@@ -162,7 +201,7 @@ for mod in SUPPORTED_MOD_LIST:
     except IndexError as e:
         print(mod, ' ' * (30-len(mod)), 'Mod not found, skipping...')
     except Exception as e:
-        # Get another Spanish translation file if there's no Rioplatense Spanish.
+        # Get the Peninsular Spanish translation file if there's no Rioplatense Spanish.
         if lang == 'es_ar':
             try:
                 mod_trans = loads(ZipFile(glob(f'{MC_MODS}/mods/{mod}*.jar')[0]).open(f'assets/{mod.replace("-", "").replace("trap", "trp").replace(

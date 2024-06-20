@@ -71,8 +71,7 @@ else:
     MC_HOME = MC_MODS = expanduser('~/AppData/Roaming/.minecraft')
 
 # TODO: Tkinter
-# lang = 'fr_fr'
-lang = 'de_de'
+lang = 'fr_fr'
 lang_directory = None
 
 if lang[:2] == 'fr':
@@ -121,7 +120,7 @@ for word in words:
         tags = loads([x for x in res.text.split('\n') if x.startswith(
             '{"pos": "noun')][0])['senses'][0]['tags']
         out_display = 'p' if 'plural' in tags else (
-            'm' if 'masculine' in tags else ('f' if 'feminine' in tags else None))
+            'm' if 'masculine' in tags else ('n' if 'neuter' in tags else ('f' if 'feminine' in tags else None)))
         worddict[word] = out_display
     except:
         print('🚫', word, 'failed')

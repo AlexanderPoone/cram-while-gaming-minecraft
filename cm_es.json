@@ -8698,6 +8698,7 @@
   "modmenu.experimental": "(Mod Menu update checker is experimental!)",
   "modmenu.childHasUpdate": "A child of t<h>is mod <h>as an update av(b)ailable. / A child of this mod has an update available.",
   "modmenu.updateText": "v(b)%s on %s / v\u25cf on \u25cf",
+  "modmenu.install_version": "Install version %s",
   "modmenu.downloadLink": "Download",
   "modmenu.buymeacoffee": "Comprame un caf\u00e9 / Buy Me a Coffee",
   "modmenu.coindrop": "Coindrop / Coindrop",

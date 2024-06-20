@@ -14,6 +14,11 @@
           "region":"France",
           "bidirectional":false
        },
+       "cm_de":{
+          "name":"Crammese",
+          "region":"Deutschland",
+          "bidirectional":false
+       },
        "cm_ja":{
           "name":"Crammese",
           "region":"日本",
