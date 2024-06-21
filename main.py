@@ -93,7 +93,7 @@ for k in trans:
                 'iende', '`iende').replace('iando', '`iando').replace('ianda', '`ianda').replace('uevo', '`uevo').replace('ueva', '`ueva').replace('ueve', '`ueve').replace('ier', '`ier').replace('uer', '`uer').replace('v', 'v(b)').replace('H', '<H>').replace('V', 'V(B)')) + ' / ' + out[k].replace('%s', '●')
         elif lang.startswith('fr_'):
             if worddict is not None:            # if the grammar file for that language exists
-                if k.startswith('item.minecraft') or k.startswith('block.minecraft') or k.startswith('entity.minecraft'):
+                if k.startswith('item.minecraft') or k.startswith('block.minecraft') or k.startswith('entity.minecraft') or k.startswith('biome.') or k.startswith('container.'):
                     spl = trans[k].split(' ')
                     firstword = spl[0].lower()
                     rest = ' '.join(spl[1:])
@@ -116,7 +116,7 @@ for k in trans:
                 out[k] = tmp + ' / ' + out[k].replace('%s', '●')
         elif lang.startswith('de_'):
             if worddict is not None:            # if the grammar file for that language exists
-                if k.startswith('item.minecraft') or k.startswith('block.minecraft') or k.startswith('entity.minecraft'):
+                if k.startswith('item.minecraft') or k.startswith('block.minecraft') or k.startswith('entity.minecraft') or k.startswith('biome.') or k.startswith('container.'):
                     spl = trans[k].split(' ')
                     firstword = spl[0]
                     rest = ' '.join(spl[1:])
@@ -131,9 +131,11 @@ for k in trans:
                             trans[k] = f'Das {firstword}{rest}'
                         if worddict[firstword] == 'p':
                             trans[k] = f'(pl.) {firstword}{rest}'
-            out[k] = trans[k] + ' / ' + out[k].replace('%s', '●')
+            if out[k] != trans[k]:
+                out[k] = trans[k] + ' / ' + out[k].replace('%s', '●')
         else:
-            out[k] = trans[k] + ' / ' + out[k].replace('%s', '●')
+            if out[k] != trans[k]:
+                out[k] = trans[k] + ' / ' + out[k].replace('%s', '●')
 
 for mod in SUPPORTED_MOD_LIST:
     try:
@@ -150,7 +152,7 @@ for mod in SUPPORTED_MOD_LIST:
                         'iende', '`iende').replace('iando', '`iando').replace('ianda', '`ianda').replace('uevo', '`uevo').replace('ueva', '`ueva').replace('ueve', '`ueve').replace('ier', '`ier').replace('uer', '`uer').replace('v', 'v(b)').replace('H', '<H>').replace('V', 'V(B)')) + ' / ' + mod_en[k].replace('%s', '●')
                 elif lang.startswith('fr_'):
                     if worddict is not None:            # if the grammar file for that language exists
-                        if k.startswith('item.') or k.startswith('block.') or k.startswith('entity.'):
+                        if k.startswith('item.') or k.startswith('block.') or k.startswith('entity.') or k.startswith('biome.'):
                             spl = mod_trans[k].split(' ')
                             firstword = spl[0].lower()
                             rest = ' '.join(spl[1:])
@@ -175,9 +177,9 @@ for mod in SUPPORTED_MOD_LIST:
                             mod_en[k] = tmp + ' / ' + mod_en[k].replace('%s', '●')
                 elif lang.startswith('de_'):
                     if worddict is not None:            # if the grammar file for that language exists
-                        if k.startswith('item.') or k.startswith('block.') or k.startswith('entity.'):
+                        if k.startswith('item.') or k.startswith('block.') or k.startswith('entity.') or k.startswith('biome.'):
                             spl = mod_trans[k].split(' ')
-                            firstword = spl[0]
+                            firstword = spl[0].replace('Kokusnuss', 'Kokosnuss')
                             rest = ' '.join(spl[1:])
                             if rest != '':
                                 rest = f' {rest}'
@@ -190,9 +192,11 @@ for mod in SUPPORTED_MOD_LIST:
                                     mod_trans[k] = f'Das {firstword}{rest}'
                                 if worddict[firstword] == 'p':
                                     mod_trans[k] = f'(pl.) {firstword}{rest}'
-                    mod_en[k] = mod_trans[k] + ' / ' + mod_en[k].replace('%s', '●')
+                    if mod_en[k] != mod_trans[k]:
+                        mod_en[k] = mod_trans[k] + ' / ' + mod_en[k].replace('%s', '●')
                 else:
-                    mod_en[k] = mod_trans[k] + ' / ' + mod_en[k].replace('%s', '●')
+                    if mod_en[k] != mod_trans[k]:
+                        mod_en[k] = mod_trans[k] + ' / ' + mod_en[k].replace('%s', '●')
         for k in mod_en:
             out[k] = mod_en[k]
         print(mod, ' ' * (30-len(mod)), '☑️ Done.')
