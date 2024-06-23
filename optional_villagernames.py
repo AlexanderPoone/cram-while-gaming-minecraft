@@ -13,14 +13,14 @@ VERSION_TO_BE_CHANGED = '1.20.6'
 REPLACE_PATH = expanduser(
     f"~/curseforge/minecraft/Instances/{VERSION_TO_BE_CHANGED}/config/collective/entity_names.json")
 
-OUT = {
+OUT = {                         # Customise for yourself, e.g., Incoterms or Docker commands, I don't know
     "female_names": [
     ],
     "male_names": [
         "Le pic",
         "Le corbeau",
         "Le moineau",
-        "La mouette",
+        "La m`ouette",
         "Le martin-pêcheur",
         "Le rouge-gorge",
         "Une autruche",
@@ -42,7 +42,7 @@ OUT = {
         "Le flemmar<d>",
         "Le paresseux",
         "Le casse-cou"
-        "Le clochard",
+        "Le clochar<d>",
         "Le radin",
         "Le séduisant",
         "Le décontracté",
@@ -72,7 +72,7 @@ OUT = {
         "L'excentrique",
         "L'exténué",
         "Le taquin",
-        "Le beauf",
+        "Le misogyne beauf",
         "Le pyromane",
         "La rouille",
         "Le détenteur du titre",

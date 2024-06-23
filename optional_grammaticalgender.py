@@ -18,7 +18,7 @@ from zipfile import ZipFile
 
 CURSEFORGE_INSTALLED = exists(expanduser('~/curseforge/minecraft'))    # False
 VERSION_TO_BE_CHANGED = '1.20.6'
-LEAPFROG = '1.21'  # leapfrog to latest.
+LEAPFROG = '1.21'                               # leapfrog to latest.
 SUPPORTED_MOD_LIST = ('advancementframes',      # It doesn't matter if some mods are not installed, the script will skip them.
             'betterlily',
             'betterpvp',
@@ -109,7 +109,6 @@ for mod in SUPPORTED_MOD_LIST:
         print(mod, format_exc())
 words = sorted(set(words))
 print(words)
-# words = [w.replace('oe', 'œ') for w in words]
 
 worddict = {}
 for word in words:
