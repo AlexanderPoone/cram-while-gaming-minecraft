@@ -84,7 +84,7 @@ OUT = {                         # Customise for yourself, e.g., Incoterms or Doc
         "Le qui parle d'une manière affectée",
         "Le qui se mêle de tout",
         "Le qui ronfle fort/bruyamment",
-        "Le qui claque des doigts",
+        "Le qui claque des doi<gts>",
         "Le qui se gratte le visage",
         "L'homme des cavernes",
         "Christophe Colomb - colon, capitaine, adventurier",
