@@ -124,6 +124,6 @@ for word in words:
         worddict[word] = out_display
     except:
         print('🚫', word, 'failed')
-with open(f'mc_{lang}.pickle', 'wb') as f:
+with open(f'knowledgebase/mc_{lang}.pickle', 'wb') as f:
     dump(worddict, f)
 print(worddict)

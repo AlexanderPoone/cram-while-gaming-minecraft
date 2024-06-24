@@ -82,8 +82,8 @@ out = loads(ZipFile(f'{MC_HOME}/versions/{LEAPFROG}/{LEAPFROG}.jar').open(
 
 # print(set([trans[k].split(' ')[0].lower() for k in trans if k.startswith('item.minecraft') or k.startswith('block.minecraft')]))
 worddict = None
-if exists(f'mc_{lang}.pickle'):
-    with open(f'mc_{lang}.pickle', 'rb') as f:
+if exists(f'knowledgebase/mc_{lang}.pickle'):
+    with open(f'knowledgebase/mc_{lang}.pickle', 'rb') as f:
         worddict = load(f)
 
 for k in trans:
