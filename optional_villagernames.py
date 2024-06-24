@@ -110,6 +110,7 @@ OUT = {                         # Customise for yourself, e.g., Incoterms or Doc
         "Léonard de Vinci - L'Homme de Vitruve",
         "Thierry Hermès - La marque de luxe française qui porte son nom",
         "Jean Cocteau - Orphée",
+        "Romain Rollan<d> - Jean-Christophe",
         "Bourvil - La Grande Vadrouille",
         "Les Grandes Espérances",
         "Révolution de Juillet porte sur le trône un nouveau roi, Louis-Philippe Ier - Trois Glorieuses - La Liberté guidant le peuple",
