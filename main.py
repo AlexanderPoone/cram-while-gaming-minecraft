@@ -247,5 +247,5 @@ for mod in SUPPORTED_MOD_LIST:
         else:
             print(mod, ' ' * (30-len(mod)), f'❎ {e}')
 
-open(f'cm_{"ar" if lang == "es_ar" else lang[:2]}.json',
+open(f'resourcepacks/crammese/assets/minecraft/lang/cm_{"ar" if lang == "es_ar" else lang[:2]}.json',
      'w', encoding='utf-8').write(dumps(out, indent=2))

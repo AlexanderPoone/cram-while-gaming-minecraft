@@ -4,6 +4,11 @@
       "description":"Crammese"
     },
     "language":{
+       "cm_ar":{
+          "name":"Crammese",
+          "region":"Argentina",
+          "bidirectional":false
+       },
        "cm_es":{
           "name":"Crammese",
           "region":"España",
