@@ -17,7 +17,7 @@ from traceback import format_exc
 from zipfile import ZipFile
 
 CURSEFORGE_INSTALLED = exists(expanduser('~/curseforge/minecraft'))    # False
-VERSION_TO_BE_CHANGED = '1.20.6'
+VERSION_TO_BE_CHANGED = '1.21'
 LEAPFROG = '1.21'                               # leapfrog to latest.
 SUPPORTED_MOD_LIST = ('advancementframes',      # It doesn't matter if some mods are not installed, the script will skip them.
             'betterlily',
