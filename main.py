@@ -12,7 +12,7 @@ from re import finditer, sub
 from zipfile import ZipFile
 
 # TODO: Tkinter GUI
-LANG = 'de_de'      # e.g., 'fr_fr', 'fr_be', 'es_es', 'es_ar', 'ja_jp', 'de_de'
+LANG = 'fr_fr'      # e.g., 'fr_fr', 'fr_be', 'es_es', 'es_ar', 'ja_jp', 'de_de'
 
 CURSEFORGE_INSTALLED = exists(expanduser('~/curseforge/minecraft'))
 VERSION_TO_BE_CHANGED = '1.21'
