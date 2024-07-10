@@ -10,7 +10,7 @@ from json import dumps
 from os.path import expanduser
 from re import sub
 
-OUT = {                         # Customise for yourself, e.g., Incoterms or Docker commands, I don't know
+OUT = {                         # Customise for your own needs. This works like flashcards, content can be Incoterms, Docker commands or whatever.
     "female_names": [
         "La m`ouette",
         "Une autruche",

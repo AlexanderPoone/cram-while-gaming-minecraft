@@ -10,7 +10,7 @@ from json import dumps
 from re import sub
 from os.path import expanduser
 
-OUT = {                         # Customise for yourself, e.g., Incoterms or Docker commands, I don't know
+OUT = {               # Customise for your own needs. This works like flashcards, content can be Incoterms, Docker commands or whatever.
     "area_names": [
         "Vitry",
         "Créteil",
