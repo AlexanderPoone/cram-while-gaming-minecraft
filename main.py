@@ -80,10 +80,6 @@ if CURSEFORGE_INSTALLED:
 else:
     MC_HOME = MC_MODS = expanduser('~/AppData/Roaming/.minecraft')
 
-out = loads(ZipFile(f'{MC_HOME}/versions/{LEAPFROG}/{LEAPFROG}.jar').open(
-    'assets/minecraft/lang/en_us.json').read())
-
-
 ##################################################
 #    Translation
 ##################################################
@@ -96,6 +92,10 @@ def main():
 
         trans = loads(open(
             f'{MC_HOME}/assets/objects/{hash[:2]}/{hash}', 'r', encoding='utf-8').read())
+
+        # Reset out
+        out = loads(ZipFile(f'{MC_HOME}/versions/{LEAPFROG}/{LEAPFROG}.jar').open(
+            'assets/minecraft/lang/en_us.json').read())
 
         # print(set([trans[k].split(' ')[0].lower() for k in trans if k.startswith('item.minecraft') or k.startswith('block.minecraft')]))
         kbase = None
