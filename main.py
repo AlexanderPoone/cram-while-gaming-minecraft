@@ -93,7 +93,7 @@ def main():
         trans = loads(open(
             f'{MC_HOME}/assets/objects/{hash[:2]}/{hash}', 'r', encoding='utf-8').read())
 
-        # Reset out
+        # Reset `out`
         out = loads(ZipFile(f'{MC_HOME}/versions/{LEAPFROG}/{LEAPFROG}.jar').open(
             'assets/minecraft/lang/en_us.json').read())
 
