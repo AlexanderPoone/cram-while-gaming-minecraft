@@ -6,3 +6,6 @@ Even though I don't have much time since I'm occupied with work all the time, my
 ```
 pip3 install -r requirements.txt
 ```
+
+## To-do
+* Fix German gender bug
