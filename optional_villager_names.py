@@ -8,10 +8,7 @@ e.g., on Windows, folder containing replaced file (replace 1.21 w/ any version) 
 
 from json import dumps
 from os.path import expanduser
-
-VERSION_TO_BE_CHANGED = '1.21'
-REPLACE_PATH = expanduser(
-    f"~/curseforge/minecraft/Instances/{VERSION_TO_BE_CHANGED}/config/collective/entity_names.json")
+from re import sub
 
 OUT = {                         # Customise for yourself, e.g., Incoterms or Docker commands, I don't know
     "female_names": [
@@ -121,4 +118,23 @@ OUT = {                         # Customise for yourself, e.g., Incoterms or Doc
     ]
 }
 
-open(REPLACE_PATH, 'w', encoding='utf-8').write(dumps(OUT, indent=2))
+def patch_villager_names(VERSION_TO_BE_PATCHED = '1.20.6'):
+    print('##################################################')
+    print('Patching Villager Names...')
+    REPLACE_PATH = expanduser(
+        f"~/curseforge/minecraft/Instances/{VERSION_TO_BE_PATCHED}/config/collective/entity_names.json")
+
+    # Change configuration
+    content = None
+    with open(expanduser(f"~/curseforge/minecraft/Instances/1.21/config/villagernames.json5"), 'r+', encoding='utf-8') as f:
+        content = f.read()
+        content = sub('(?<="shouldCapitalizeNames": ).*', 'false', content)
+        # print(content)
+    with open(expanduser(f"~/curseforge/minecraft/Instances/1.21/config/villagernames.json5"), 'w', encoding='utf-8') as f:
+        f.write(content)
+
+    open(REPLACE_PATH, 'w', encoding='utf-8').write(dumps(OUT, indent=2))
+
+
+if __name__ == '__main__':
+    patch_villager_names()
