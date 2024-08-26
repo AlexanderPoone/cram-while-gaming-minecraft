@@ -15,7 +15,7 @@ For best learning results, install:
 * [`Jade` mod by Snownee for an information HUD](https://www.curseforge.com/minecraft/mc-mods/jade)
 * [`Random Village Names` mod by Serilum](https://www.curseforge.com/minecraft/mc-mods/random-village-names)
 * [`Villager Names` mod by Serilum](https://www.curseforge.com/minecraft/mc-mods/villager-names)
-* [`Xaero's Minimap` by xaero96, with text labels on](https://www.curseforge.com/minecraft/mc-mods/xaeros-minimap)
+* [`Xaero's Minimap` by xaero96, enable overlay text labels of all entities](https://www.curseforge.com/minecraft/mc-mods/xaeros-minimap)
 
 and set these Minecraft Settings:
 * `Accessibility Settings` > `Subtitles: Enabled`
