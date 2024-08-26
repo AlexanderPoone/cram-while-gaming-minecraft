@@ -22,7 +22,8 @@ and set these Minecraft Settings:
 * `Accessibility Settings` > `Notification Time: 10x`
 
 ## Roadmap
-* 'Q2MC' muhahahaha...
+* GUI
+* Plan w/ codename 'Q2MC' muhahahaha...
 
 ## To-do
 * Fix German gender bug
