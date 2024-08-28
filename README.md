@@ -19,7 +19,7 @@ For best learning results, install:
 * [`Villager Names` mod by Serilum](https://www.curseforge.com/minecraft/mc-mods/villager-names)
 * [`Xaero's Minimap` by xaero96](https://www.curseforge.com/minecraft/mc-mods/xaeros-minimap)
 
-If Fabric is used, [ModMenu](https://www.curseforge.com/minecraft/mc-mods/modmenu) is recommended. 
+If Fabric is used, [`Mod Menu` by Prospector](https://www.curseforge.com/minecraft/mc-mods/modmenu) is recommended. 
 
 and set these Minecraft settings:
 * `Accessibility Settings` > `Subtitles: Enabled`
