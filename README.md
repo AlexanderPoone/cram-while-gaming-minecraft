@@ -14,10 +14,10 @@ pip3 install -r requirements.txt
 ```
 
 For best learning results, install:
-* [`Jade` mod by Snownee for an information HUD](https://www.curseforge.com/minecraft/mc-mods/jade)
+* [`Jade` mod by Snownee (for an information HUD)](https://www.curseforge.com/minecraft/mc-mods/jade)
 * [`Random Village Names` mod by Serilum](https://www.curseforge.com/minecraft/mc-mods/random-village-names)
 * [`Villager Names` mod by Serilum](https://www.curseforge.com/minecraft/mc-mods/villager-names)
-* [`Xaero's Minimap` by xaero96](https://www.curseforge.com/minecraft/mc-mods/xaeros-minimap)
+* [`Xaero's Minimap` mod by xaero96](https://www.curseforge.com/minecraft/mc-mods/xaeros-minimap)
 
 If Fabric is used, [`Mod Menu` by Prospector](https://www.curseforge.com/minecraft/mc-mods/modmenu) is recommended. 
 
