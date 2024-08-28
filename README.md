@@ -17,11 +17,15 @@ For best learning results, install:
 * [`Jade` mod by Snownee for an information HUD](https://www.curseforge.com/minecraft/mc-mods/jade)
 * [`Random Village Names` mod by Serilum](https://www.curseforge.com/minecraft/mc-mods/random-village-names)
 * [`Villager Names` mod by Serilum](https://www.curseforge.com/minecraft/mc-mods/villager-names)
-* [`Xaero's Minimap` by xaero96, enable overlay text labels of all entities & biome information HUD](https://www.curseforge.com/minecraft/mc-mods/xaeros-minimap)
+* [`Xaero's Minimap` by xaero96](https://www.curseforge.com/minecraft/mc-mods/xaeros-minimap)
 
-and set these Minecraft Settings:
+and set these Minecraft settings:
 * `Accessibility Settings` > `Subtitles: Enabled`
 * `Accessibility Settings` > `Notification Time: 10x`
+
+and set these mod settings:
+* Jade - 2x display scale; disable container details stacking
+* Xaero's Minimap - enable overlay text labels of all entities; enable biome information HUD
 
 ## Roadmap
 * GUI
