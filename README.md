@@ -1,5 +1,5 @@
 # `cram-while-gaming-minecraft`
-Love gaming but concerned about the future? Here is the *Cram While Gaming* series, which support 40+ games.
+Love gaming but concerned about the future? Presenting the *Cram While Gaming* series which (will) support 40+ games.
 
 This repo generates a Minecraft resource pack, which provides side-by-side foreign language translations (e.g., multiple variants of French and Spanish, as well as Romaji romanisation of Japanese) with memory aids (e.g., literal readings) for every English Minecraft in-game text. This enables cramming words and grammar rules (e.g., grammatical genders) of foreign languages while playing Minecraft, hence the term *crammese*.
 
