@@ -30,7 +30,7 @@ and set these mod settings:
 * Xaero's Minimap - enable overlay text labels of all entities; enable biome information HUD
 
 ## Roadmap
-* GUI
+* Web interface
 * Plan w/ codename 'Q2MC' muhahahaha...
 
 ## To-do
