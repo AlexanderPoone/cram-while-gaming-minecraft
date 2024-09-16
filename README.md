@@ -1,6 +1,9 @@
 # `cram-while-gaming-minecraft`
 Love gaming but concerned about the future? Presenting the *Cram While Gaming* series which (will) support 40+ games.
 
+Grammatical genders are chaotic. Who knows ***pamplemousse*** is ***le*** pamplemousse but **mousse** is ***la*** mousse...
+
+
 This repo generates a Minecraft resource pack, which provides side-by-side foreign language translations (e.g., multiple variants of French and Spanish, as well as Romaji romanisation of Japanese) with memory aids (e.g., literal readings) for every English Minecraft in-game text. This enables cramming words and grammar rules (e.g., grammatical genders) of foreign languages while playing Minecraft, hence the term *crammese*.
 
 Even though I don't have much time since I'm occupied with work all the time, my life's dreadful and I just have to play Minecraft to lighten my mood. *\*sigh\**
