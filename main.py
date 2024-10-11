@@ -19,14 +19,14 @@ from optional_villager_names import patch_villager_names
 #    User Config              TODO: Tkinter GUI
 ##################################################
 
-LANGUAGES_TO_BE_PATCHED = ('fr_fr', 'es_es', 'es_ar', 'ja_jp', 'de_de')
-VERSION_TO_BE_PATCHED = '1.21'
+LANGUAGES_TO_BE_PATCHED = ('fr_fr', 'es_es', 'es_ar', 'ja_jp', 'de_de', 'uk_ua')
+VERSION_TO_BE_PATCHED = '1.21.1'
 
 ##################################################
 #    Constants
 ##################################################
 CURSEFORGE_INSTALLED = exists(expanduser('~/curseforge/minecraft'))
-LEAPFROG = '1.21'						        # Leapfrog to the latest translation, e.g., 1.20.6 using 1.21's updated translation.
+LEAPFROG = '1.21.1'						        # Leapfrog to the latest translation, e.g., 1.20.6 using 1.21's updated translation.
 SUPPORTED_MOD_LIST = ('advancementframes',		# It doesn't matter if some mods are not installed, the script will skip them.
             'areas',
             'betterlily',
