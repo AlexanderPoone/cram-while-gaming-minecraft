@@ -34,7 +34,7 @@ and set these mod settings:
 
 ## Roadmap
 * Web interface
-* Plan w/ codename 'Q2MC' muhahahaha...
+* [Plan w/ codename 'Q2MC' muhahahaha...](https://quizlet.com/hk/193296004/verbos-en-castellano-flash-cards/)
 
 ## To-do
 * Fix German gender bug
