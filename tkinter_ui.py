@@ -1,8 +1,10 @@
-import tkinter as tk
-from tkinter import ttk
 import subprocess
-import os
+import tkinter as tk
+from glob import glob
+from os.path import basename, expanduser
 from tkinter import font as tkFont  # Import the font module
+from tkinter import ttk
+
 
 def create_window():
     window = tk.Tk()
@@ -28,7 +30,7 @@ def create_window():
     # Version dropdown
     version_label = tk.Label(control_frame, text="Version:", bg='#1a1a1a', fg='white', font=custom_font)
     version_label.pack(side=tk.LEFT, padx=(0, 5))
-    versions = ["1.0", "1.1", "1.2"]
+    versions = [basename(x) for x in glob(expanduser('~/curseforge/minecraft/Instances/*'))]
     version_combo = ttk.Combobox(control_frame, values=versions, style='TCombobox')
     version_combo.pack(side=tk.LEFT, padx=(0, 10))
 
