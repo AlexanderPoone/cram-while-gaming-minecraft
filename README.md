@@ -8,6 +8,8 @@ This repo generates a Minecraft resource pack, which provides side-by-side forei
 
 Even though I don't have much time since I'm occupied with work all the time, my life's dreadful and I just have to play Minecraft to lighten my mood. *\*sigh\**
 
+![image](https://github.com/user-attachments/assets/2f1eeb4a-97b7-45d5-93b7-264ecd74cb18)
+
 ## Requirements
 The CurseForge edition of Minecraft is supported and recommended.
 
